@@ -13,6 +13,7 @@ export class EditComponent implements OnInit {
   constructor(private router:Router,private service:ServiceService) { }
 
   ngOnInit() {
+    this.Editar();
   }
   Editar(){
     let clave=localStorage.getItem("clave");

@@ -23,7 +23,7 @@ export class ServiceService {
     return this.http.get<Persona>(this.Url+"/"+clave);
   }
   updatePersona(persona:Persona){
-    return this.http.put<Persona>(this.Url+"/"+persona.clave,persona);
+    return this.http.put<Persona>(this.Url+"/ ",persona);
   }
   deletePersona(persona:Persona){
     return this.http.delete<Persona>(this.Url+"/"+persona.clave);

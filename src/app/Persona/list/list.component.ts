@@ -20,7 +20,7 @@ export class ListComponent implements OnInit {
        
      }
      Editar(persona:Persona):void{
-      localStorage.setItem("clave",persona.clave);
+      localStorage.setItem("clave",persona.clave.toString());
       this.router.navigate(["editar"]);
     }
   
