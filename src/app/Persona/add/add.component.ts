@@ -10,21 +10,21 @@ import { Persona } from 'src/app/Model/persona';
 })
 export class AddComponent implements OnInit {
 
-  persona:Persona=new Persona();
- 
-  constructor(private router:Router, private service:ServiceService) { }
+  persona: Persona = new Persona();
+
+  constructor(private router: Router, private service: ServiceService) { }
 
   ngOnInit() {
   }
 
-  
-  
-  Guardar(){
+
+
+  Guardar() {
     this.service.createPersona(this.persona)
-    .subscribe(data=>{
-      alert("Se Agrego con Exito...!!!");
-      this.router.navigate(["listar"]);
-    })
+    .subscribe(data => {
+      alert('Se Agrego con Exito...!!!');
+      this.router.navigate(['listar']);
+    });
   }
 
 }

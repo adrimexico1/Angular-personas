@@ -9,27 +9,27 @@ import { ServiceService } from 'src/app/Service/service.service';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  persona :Persona=new Persona();
-  constructor(private router:Router,private service:ServiceService) { }
+  persona: Persona = new Persona();
+  constructor(private router: Router, private service: ServiceService) { }
 
   ngOnInit() {
     this.Editar();
   }
-  Editar(){
-    let clave=localStorage.getItem("clave");
+  Editar() {
+    const clave = localStorage.getItem('clave');
     this.service.getPersonaId(clave)
-    .subscribe(data=>{
-      this.persona=data;
-    })
+    .subscribe(data => {
+      this.persona = data;
+    });
 
   }
-  Actualizar(persona:Persona){
+  Actualizar(persona: Persona) {
     this.service.updatePersona(persona)
-    .subscribe(data=>{
-      this.persona=data;
-      alert("Se Actualizo con Exito...!!!");
-      this.router.navigate(["listar"]);
-    })
+    .subscribe(data => {
+      this.persona = data;
+      alert('Se Actualizo con Exito...!!!');
+      this.router.navigate(['listar']);
+    });
   }
 
 }
